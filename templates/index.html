@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Moscow firefighters statistics </title>
+    <style>
+        h2 {
+            text-align: center;
+        }
+
+        #main-container {
+            background-image: url("https://images.pexels.com/photos/260314/pexels-photo-260314.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+        background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #cells-table{
+            background-color: aliceblue;
+            opacity: 0.8;
+            height: 500px;
+            width: 200px;
+            margin-left: auto;
+            margin-right:auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h2> This is Moscow firefighters statistics by month</h2>
+    <div id="main-container">
+        <table id="cells-table">
+            <thead>
+             <tr>
+                <th>Month</th>
+                <th>Calls count</th>
+             </tr>
+            </thead>
+            <tbody>
+                {% for element in data %}
+                        <tr>
+                            <td>{{ element ['month_name'] }}</td>
+                            <td>{{ element['calls_count'] }}</td>
+                        </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+
+</body>
+</html>
